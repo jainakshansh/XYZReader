@@ -7,8 +7,7 @@
     android:layout_marginStart="4dp"
     android:layout_marginTop="4dp"
     android:clickable="true"
-    android:focusable="true"
-    android:foreground="?selectableItemBackground">
+    android:focusable="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +19,8 @@
             android:id="@+id/thumbnail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/photo_placeholder" />
+            android:background="@color/photo_placeholder"
+            android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/article_title"
