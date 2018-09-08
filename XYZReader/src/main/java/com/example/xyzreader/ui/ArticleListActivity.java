@@ -50,21 +50,18 @@ public class ArticleListActivity extends AppCompatActivity implements
     // Use default locale format
     private SimpleDateFormat outputFormat = new SimpleDateFormat();
     // Most time functions can only handle 1902 - 2037
-    private GregorianCalendar START_OF_EPOCH = new GregorianCalendar(2,1,1);
+    private GregorianCalendar START_OF_EPOCH = new GregorianCalendar(2, 1, 1);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article_list);
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mToolbar = findViewById(R.id.toolbar);
 
+        mSwipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
 
-        final View toolbarContainerView = findViewById(R.id.toolbar_container);
-
-        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
-
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mRecyclerView = findViewById(R.id.recycler_view);
         getLoaderManager().initLoader(0, null, this);
 
         if (savedInstanceState == null) {
@@ -181,8 +178,8 @@ public class ArticleListActivity extends AppCompatActivity implements
             } else {
                 holder.subtitleView.setText(Html.fromHtml(
                         outputFormat.format(publishedDate)
-                        + "<br/>" + " by "
-                        + mCursor.getString(ArticleLoader.Query.AUTHOR)));
+                                + "<br/>" + " by "
+                                + mCursor.getString(ArticleLoader.Query.AUTHOR)));
             }
             holder.thumbnailView.setImageUrl(
                     mCursor.getString(ArticleLoader.Query.THUMB_URL),
@@ -203,9 +200,9 @@ public class ArticleListActivity extends AppCompatActivity implements
 
         public ViewHolder(View view) {
             super(view);
-            thumbnailView = (DynamicHeightNetworkImageView) view.findViewById(R.id.thumbnail);
-            titleView = (TextView) view.findViewById(R.id.article_title);
-            subtitleView = (TextView) view.findViewById(R.id.article_subtitle);
+            thumbnailView = view.findViewById(R.id.thumbnail);
+            titleView = view.findViewById(R.id.article_title);
+            subtitleView = view.findViewById(R.id.article_subtitle);
         }
     }
 }
