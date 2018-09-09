@@ -7,14 +7,14 @@
     android:layout_marginStart="4dp"
     android:layout_marginTop="4dp"
     android:clickable="true"
-    android:focusable="true">
+    android:focusable="true"
+    app:cardElevation="@dimen/card_elevation">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!--suppress AndroidLintContentDescription -->
         <com.example.xyzreader.ui.DynamicHeightNetworkImageView
             android:id="@+id/thumbnail"
             android:layout_width="match_parent"

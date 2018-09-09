@@ -22,8 +22,15 @@
                 <ImageView
                     android:id="@+id/photo"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/detail_card_top_margin"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/app_name"
                     android:scaleType="centerCrop" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/detail_card_top_margin"
+                    android:background="@drawable/photo_background_protection" />
 
             </FrameLayout>
 
@@ -89,17 +96,16 @@
 
     </com.example.xyzreader.ui.ObservableScrollView>
 
-    <ImageButton
+    <android.support.design.widget.FloatingActionButton
         android:id="@+id/share_fab"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="@dimen/fab_margin"
         android:layout_marginEnd="@dimen/fab_margin"
-        android:background="@drawable/add_fab_background"
         android:contentDescription="@string/action_share"
         android:src="@drawable/ic_share"
-        android:stateListAnimator="@anim/fab_state_list_anim"
-        app:elevation="@dimen/fab_elevation" />
+        app:elevation="@dimen/fab_elevation"
+        app:pressedTranslationZ="@dimen/fab_press_translation_z" />
 
 </com.example.xyzreader.ui.DrawInsetsFrameLayout>

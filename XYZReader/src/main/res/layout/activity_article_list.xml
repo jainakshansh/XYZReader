@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/Theme.Bacon"
-        app:elevation="10dp">
+        app:elevation="@dimen/app_bar_elevation">
 
         <FrameLayout
             android:id="@+id/toolbar_container"
