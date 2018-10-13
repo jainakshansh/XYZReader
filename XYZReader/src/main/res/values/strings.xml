@@ -9,4 +9,6 @@
 
     <string name="up">Up</string>
 
+    <string name="activity_to_activity_transition">Simple Activity Transition</string>
+
 </resources>
